@@ -58,7 +58,7 @@ topBar localName inner =
 logo =
     let btn clr =
           let name =
-                Text.fromString "elm"
+                Text.fromString "HaruNire"
                   |> Text.height 24
                   |> Text.color clr
                   |> Text.leftAligned

@@ -10,15 +10,15 @@ import Website.ColorScheme as C
 import Window
 
 port title : String
-port title = "Elm - functional web programming"
+port title = "HaruNire - Elmで遊ぶ"
 
 main = skeleton "" content <~ Window.dimensions
 
 tagLine =
     Text.leftAligned <|
-        Text.fromString "A " ++
-        Text.link "/learn/What-is-FRP.elm" (Text.fromString "functional reactive") ++
-        Text.fromString " language for interactive applications"
+        --Text.fromString "A " ++
+        --Text.link "/learn/What-is-FRP.elm" (Text.fromString "functional reactive") ++
+        Text.fromString "関数型リアクティブ言語Elmで遊ぶ"
 
 content outer =
     let inner = 600

@@ -42,7 +42,7 @@ compileSource source =
 
 removeArtifacts :: String -> IO ()
 removeArtifacts moduleName =
-  do  let dir = "elm-stuff" </> "build-artifacts" </> "elm-lang" </> "elm-lang.org" </> "1.0.0"
+  do  let dir = "elm-stuff" </> "build-artifacts" </> "Preld" </> "ElmWebsite_Example" </> "1.0.0"
       removeFile (dir </> moduleName <.> "elmi")
       removeFile (dir </> moduleName <.> "elmo")
 

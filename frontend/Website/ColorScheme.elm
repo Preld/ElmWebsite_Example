@@ -12,4 +12,5 @@ accent4 = rgb 127 209 59      -- #7FD13B  green
 
 lightGrey  = rgb 245 245 245  -- #F5F5F5
 mediumGrey = rgb 216 221 225  -- #D8DDE1
+mediumBlue = rgb 0 150 255    -- #0096FE
 
