@@ -83,7 +83,7 @@ tabs localName =
 
 
 paths =
-  [ ("Learn"    , "/Learn.elm")
+  [ ("基本文"    , "/Learn.elm")
   , ("Examples" , "/Examples.elm")
   , ("Libraries", "/Libraries.elm")
   , ("Community", "/Community.elm")
