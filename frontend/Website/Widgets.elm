@@ -17,7 +17,7 @@ headerFaces =
 
 bigLogo =
   let name =
-        Text.fromString "elm"
+        Text.fromString "HaruNire"
           |> Text.height 60
           |> Text.leftAligned
   in

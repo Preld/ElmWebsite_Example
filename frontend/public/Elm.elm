@@ -33,76 +33,56 @@ content outer =
     [ spacer outer 20
     , container outer 100 middle bigLogo
     , container outer 40 middle tagLine
-    , center (installButtons 440)
+    --, center (installButtons 440)
     , spacer outer 20
     ]) `above` flow down
     [ color C.mediumGrey (spacer outer 1)
     , spacer outer 30
-    , center threeKeywords
+    , centerText siteInfoText
     , spacer outer 60
-    , centerText exampleText
-    , container outer 500 middle <| exampleBlock 860
+    , centerText latestCodeText
+    , container outer 500 middle <| latestCodeBlock 860
     , center (button outer 260 "/Examples.elm" "More Examples")
-    , spacer outer 60
-    , width outer debuggerTitle
-    , centerText debuggerText
-    , center debuggerBlock
-    , center <| flow right
-        [ button 220 180 "/try" "Edit"
-        , button 220 180 "http://debug.elm-lang.org/try" "Debug"
-        ]
+    --, spacer outer 60
+    --, width outer debuggerTitle
+    --, centerText debuggerText
+    --, center debuggerBlock
+    --, center <| flow right
+    --    [ button 220 180 "/try" "Edit"
+    --    , button 220 180 "http://debug.elm-lang.org/try" "Debug"
+    --    ]
     ]
 
-threeKeywords =
-    flow right
-    [ width 260 functional
+mainPageContent =
+    flow down
+    [ width 860 siteInfo
     , spacer 40 10
-    , width 260 reactive
-    , spacer 40 10
-    , width 260 compatible
+    , width 860 otherInfo
     ]
 
-functional = Markdown.toElement """
-<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: center; font-size: 2em;">Functional</div>
+siteInfoText = Markdown.toElement """
+<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: Left; font-size: 2.5em;">このサイトについて</div>
 
-Features like immutability and type inference help you write code that is short,
-fast, and maintainable. Elm makes them [easy to learn](/Learn.elm) too.
-
-"""
-
-reactive = Markdown.toElement """
-<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: center; font-size: 2em;">Reactive</div>
-
-Elm is based on the idea of [Functional Reactive
-Programming](/learn/What-is-FRP.elm). Create highly interactive applications
-without messy callbacks or a tangle of shared state.
-"""
-
-compatible = Markdown.toElement """
-<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: center; font-size: 2em;">Compatible</div>
-
-Elm compiles to HTML, CSS, and JavaScript. It is easy to [use HTML][html] and
-[interop with JS][ports], so it is simple to write part of your application in Elm.
-
-[html]: /blog/Blazing-Fast-Html.elm
-[ports]: /learn/Ports.elm
+[Elm](http://elm-lang.org/)はとても面白い言語なのに、日本ではあまり流行っていないので流行ればいいなーと思って作りました。
+簡単にコピれて動かせるサンプルを用意していくつもりです。
 
 """
 
-exampleText = Markdown.toElement """
+otherInfoText = Markdown.toElement """
+<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: Left; font-size: 2.5em;">まだ使ってません</div>
 
-<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: center; font-size: 3em;">Examples</div>
+今のところ使ってない
+"""
 
-Elm is great for [2D](/blog/Pong.elm) and
-[3D](https://github.com/johnpmayer/elm-webgl) games,
-[diagrams](https://github.com/seliopou/elm-d3), widgets, and
-[websites](/blog/Blazing-Fast-Html.elm). In addition to the larger
-examples showcased here, there are tons of [educational examples](/Examples.elm)
-to help you learn Elm by reading and modifying simple programs.
+latestCodeText = Markdown.toElement """
+
+<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: Left; font-size: 3em;">Latest Codes</div>
+
+最新のサンプルをいくつか紹介します。
 
 """
 
-exampleBlock w =
+latestCodeBlock w =
     Tile.examples w
     [ [ ("Home/Mario", "/edit/examples/Intermediate/Mario.elm", Nothing)
       , ("Home/Elmtris", "http://people.cs.umass.edu/~jcollard/elmtris/", Just "https://github.com/jcollard/elmtris")
