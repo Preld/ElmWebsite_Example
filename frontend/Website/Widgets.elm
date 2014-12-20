@@ -14,26 +14,23 @@ headerFaces =
     , "calibri", "verdana", "helvetica", "arial"
     ]
 
-
 bigLogo =
   let name =
         Text.fromString "HaruNire"
-          |> Text.height 60
+          |> Text.height 100
           |> Text.leftAligned
   in
     flow right
       [ image 80 80 "/logo.png"
       , spacer 10 80
-      , container (widthOf name) 80 middle name
+      , container (widthOf name) 100 middle name
       ]
-
 
 installButtons w =
     flow right
     [ button (w // 2) 180 "/try" "Try"
     , button (w // 2) 180 "/Install.elm" "Install"
     ]
-
 
 -- implementation
 

@@ -21,7 +21,7 @@ tagLine =
         Text.fromString "関数型リアクティブ言語Elmで遊ぶ"
 
 content outer =
-    let inner = 600
+    let inner = 860 --　ページの横幅を決める
         half = inner // 2
         center elem =
             container outer (heightOf elem) middle elem
@@ -30,8 +30,9 @@ content outer =
             in  center msg'
     in
     color Color.white (flow down
-    [ spacer outer 20
-    , container outer 100 middle bigLogo
+    [-- spacer outer 20
+    --, container outer 200 middle bigLogo
+    topTitle outer
     , container outer 40 middle tagLine
     --, center (installButtons 440)
     , spacer outer 20
@@ -53,11 +54,10 @@ content outer =
     --    ]
     ]
 
-mainPageContent =
-    flow down
-    [ width 860 siteInfo
-    , spacer 40 10
-    , width 860 otherInfo
+topTitle outer =
+    layers
+    [container outer 500 middle (fittedImage outer 500 "/top_img/top_title_pict.jpg" )
+    ,container outer 500 middle bigLogo
     ]
 
 siteInfoText = Markdown.toElement """
@@ -76,7 +76,7 @@ otherInfoText = Markdown.toElement """
 
 latestCodeText = Markdown.toElement """
 
-<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: Left; font-size: 3em;">Latest Codes</div>
+<div style="font-family: futura, 'century gothic', 'twentieth century', calibri, verdana, helvetica, arial; text-align: Left; font-size: 2.5em;">Latest Codes</div>
 
 最新のサンプルをいくつか紹介します。
 
